@@ -1,0 +1,23 @@
+{
+  "name": "@michaelzaytsev/prisma-odata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelzaytsev/prisma-odata.git"
+  },
+  "keywords": [
+    "prisma",
+    "odata"
+  ],
+  "author": "Michael Zaytsev <michael.zaytsev.world@outlook.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/michaelzaytsev/prisma-odata/issues"
+  },
+  "homepage": "https://github.com/michaelzaytsev/prisma-odata#readme"
+}
