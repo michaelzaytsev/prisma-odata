@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -14,10 +17,17 @@
     "prisma",
     "odata"
   ],
+  "files": ["lib/**/*"],
   "author": "Michael Zaytsev <michael.zaytsev.world@outlook.com>",
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/michaelzaytsev/prisma-odata/issues"
   },
-  "homepage": "https://github.com/michaelzaytsev/prisma-odata#readme"
+  "homepage": "https://github.com/michaelzaytsev/prisma-odata#readme",
+  "devDependencies": {
+    "prettier": "2.8.1",
+    "tslint": "6.1.3",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "4.9.4"
+  }
 }
