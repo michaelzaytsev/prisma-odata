@@ -10,5 +10,5 @@ export function convertODataSortingQuery($orderby: string, options?: ConvertODat
 }
 
 export interface ConvertODataSortingQuery {
-  maximumPropertyNameChunks: number;
+  maximumPropertyNameChunks?: number;
 };
