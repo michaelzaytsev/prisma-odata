@@ -33,6 +33,9 @@ function convertOperation(operation: any[], binds: ODataBinds, maximumPropertyNa
       return composeProperty(operation[1], { lte: binds[operation[2].bind][1] }, maximumPropertyNameChunks);
     case 'ge':
       return composeProperty(operation[1], { gte: binds[operation[2].bind][1] }, maximumPropertyNameChunks);
+    case 'in':
+      const values = operation[2].map(({ bind }: { bind: number }) => binds[bind][1]);
+      return composeProperty(operation[1], { in: values }, maximumPropertyNameChunks);
     case 'call':
       const { method, args } = operation[1];
       switch (method) {
