@@ -1,4 +1,4 @@
-import { parse } from '@balena/odata-parser';
+import { parse } from './odata-query-parser';
 import { DEFAULT_MAXIMUM_PROPERTY_NAME_CHUNKS } from './defaults';
 import { composeProperty } from './utils';
 

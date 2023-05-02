@@ -1,4 +1,4 @@
-import { ODataBinds, parse } from '@balena/odata-parser';
+import { ODataBinds, parse } from './odata-query-parser';
 import { DEFAULT_MAXIMUM_PROPERTY_NAME_CHUNKS } from './defaults';
 import { composeProperty } from './utils';
 
@@ -33,10 +33,11 @@ function convertOperation(operation: any[], binds: ODataBinds, maximumPropertyNa
       return composeProperty(operation[1], { lte: binds[operation[2].bind][1] }, maximumPropertyNameChunks);
     case 'ge':
       return composeProperty(operation[1], { gte: binds[operation[2].bind][1] }, maximumPropertyNameChunks);
-    case 'in':
+    case 'in': {
       const values = operation[2].map(({ bind }: { bind: number }) => binds[bind][1]);
       return composeProperty(operation[1], { in: values }, maximumPropertyNameChunks);
-    case 'call':
+    }
+    case 'call': {
       const { method, args } = operation[1];
       switch (method) {
         case 'contains':
@@ -48,6 +49,7 @@ function convertOperation(operation: any[], binds: ODataBinds, maximumPropertyNa
         default:
           throw new Error(`Unhandled method "${method}"`);
       }
+    }
     default:
       throw new Error(`Unhandled operator "${operator}"`);
   }
