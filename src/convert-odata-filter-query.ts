@@ -46,6 +46,8 @@ function convertOperation(operation: any[], binds: ODataBinds, maximumPropertyNa
           return composeProperty(args[0], { startsWith: binds[args[1].bind][1] }, maximumPropertyNameChunks);
         case 'endswith':
           return composeProperty(args[0], { endsWith: binds[args[1].bind][1] }, maximumPropertyNameChunks);
+        case 'has':
+          return composeProperty(args[0], { has: binds[args[1].bind][1] }, maximumPropertyNameChunks);
         default:
           throw new Error(`Unhandled method "${method}"`);
       }

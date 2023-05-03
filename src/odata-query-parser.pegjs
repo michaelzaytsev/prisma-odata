@@ -32,7 +32,8 @@
 		totalseconds: 1,
 		toupper: 1,
 		trim: 1,
-		year: 1
+		year: 1,
+		has: 2
 	};
 
 	const operatorPrecedence = {
@@ -380,6 +381,7 @@ FilterMethodCallExpression =
 	/	'toupper'
 	/	'trim'
 	/	'year'
+	/ 'has'
 	)
 	'('
 		spaces

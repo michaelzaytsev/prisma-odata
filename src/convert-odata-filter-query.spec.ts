@@ -75,4 +75,8 @@ describe('convertODataFilterQuery', () => {
   test('in', () => {
     expect(convertODataFilterQuery(`property in (3, 4, '7, 12')`)).toStrictEqual({ property: { in: [3, 4, '7, 12'] }});
   });
+
+  test('has', () => {
+    expect(convertODataFilterQuery(`has(property, 12)`)).toStrictEqual({ property: { has: 12 }});
+  });
 });
